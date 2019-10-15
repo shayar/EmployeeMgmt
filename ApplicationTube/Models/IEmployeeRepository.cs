@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 
 namespace ApplicationTube.Models
 {
-     public interface IEmployeeRepository
+    public interface IEmployeeRepository
     {
         Employee GetEmployee(int id);
+
+        IEnumerable<Employee> GetAllEmployees();
     }
 }

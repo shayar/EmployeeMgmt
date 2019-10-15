@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ApplicationTube.Models;
+using ApplicationTube.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApplicationTube.Controllers
@@ -15,15 +16,20 @@ namespace ApplicationTube.Controllers
         {
             _employeeRepository = employeeRepository;
         }
-        public string Index()
+        public IActionResult Index()
         {
-            return _employeeRepository.GetEmployee(1).Name;
+            var model = _employeeRepository.GetAllEmployees();
+            return View(model);
         }
 
-        public ViewResult Details()
+        public ViewResult Details(int id)
         {
-            Employee employee = _employeeRepository.GetEmployee(1);
-            return View(employee);
+            HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
+            {
+                Employee = _employeeRepository.GetEmployee(id),
+                PageTitle = "Employee Details"
+            };
+            return View(homeDetailsViewModel);
         }
     }
 }
