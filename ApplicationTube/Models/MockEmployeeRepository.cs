@@ -13,10 +13,10 @@ namespace ApplicationTube.Models
         {
             _employeeList = new List<Employee>()
             {
-                new Employee() {Id = 1, Name = "Abxc", Department = "HR", Email = "shayar@uba-solutions.com"},
-                new Employee() {Id = 2, Name = "Abc", Department = "IT", Email = "shayar@uba-solutions.com"},
-                new Employee() {Id = 3, Name = "Cat", Department = "IT", Email = "shayar@uba-solutions.com"},
-                new Employee() {Id = 4, Name = "Dog", Department = "Operation", Email = "shayar@uba-solutions.com"}
+                new Employee() {Id = 1, Name = "Abxc", Department = Dept.HR, Email = "shayar@uba-solutions.com"},
+                new Employee() {Id = 2, Name = "Abc", Department = Dept.IT, Email = "shayar@uba-solutions.com"},
+                new Employee() {Id = 3, Name = "Cat", Department = Dept.IT, Email = "shayar@uba-solutions.com"},
+                new Employee() {Id = 4, Name = "Dog", Department = Dept.Payroll, Email = "shayar@uba-solutions.com"}
             };
         }
 
